@@ -1,0 +1,64 @@
+CREATE TABLE "Client" (
+	"ID"	INTEGER,
+	"Name"	TEXT NOT NULL,
+	"License"	TEXT NOT NULL,
+	"Birthday"	TEXT NOT NULL,
+	"Phone"	TEXT NOT NULL,
+	PRIMARY KEY("ID")
+);
+
+CREATE TABLE "Car" (
+	"ID"	INTEGER,
+	"Model"	TEXT NOT NULL,
+	"Year"	INTEGER NOT NULL,
+	"Color"	TEXT NOT NULL,
+	"Number"	TEXT NOT NULL,
+	PRIMARY KEY("ID")
+);
+
+CREATE TABLE "Service" (
+	"ID"	INTEGER,
+	"Name"	TEXT NOT NULL,
+	"Address"	TEXT NOT NULL,
+	"Payment_details"	TEXT NOT NULL,
+	PRIMARY KEY("ID")
+);
+
+CREATE TABLE "Rent" (
+	"ID"	INTEGER,
+	"Client"	INTEGER NOT NULL,
+	"Car"	INTEGER NOT NULL,
+	"Start"	TEXT NOT NULL,
+	"End"	TEXT NOT NULL,
+	"Price"	REAL NOT NULL,
+	PRIMARY KEY("ID"),
+	FOREIGN KEY("Car") REFERENCES "Car"("ID"),
+	FOREIGN KEY("Client") REFERENCES "Client"("ID")
+);
+
+CREATE TABLE "Maintenance" (
+	"ID"	INTEGER,
+	"Car"	INTEGER NOT NULL,
+	"Service"	INTEGER NOT NULL,
+	"Start"	TEXT NOT NULL,
+	"End"	TEXT NOT NULL,
+	"Price"	REAL NOT NULL,
+	PRIMARY KEY("ID"),
+	FOREIGN KEY("Car") REFERENCES "Car"("ID"),
+	FOREIGN KEY("Service") REFERENCES "Service"("ID")
+);
+
+INSERT INTO Client VALUES
+(1, 'Олег', '01 23 456789', '2001-01-01', '+7 012 345-67-89');
+
+INSERT INTO Car VALUES
+(1, 'Ласточка', 2000, 'Фиолетовый', 'A 123 БС 456');
+
+INSERT INTO Service VALUES
+(1, 'Пепег моторс', 'Ул. Пушкина., дом Колотушкина', 'Наличка');
+
+INSERT INTO Rent VALUES
+(1, 1, 1, '2024-11-27 15:30:00', '2024-11-29 15:00:00', 1500);
+
+INSERT INTO Maintenance VALUES
+(1, 1, 1, '2024-10-27 15:30:00', '2024-10-29 15:00:00', 1500);
