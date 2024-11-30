@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
 
@@ -18,7 +19,7 @@ namespace MDI_Oleg
             this.table = table;
             load();
             hide();
-            
+
         }
 
         private void hide()
@@ -99,26 +100,38 @@ namespace MDI_Oleg
 
         private void Edit_Click(object sender, System.EventArgs e)
         {
+            Form child;
             switch (table)
             {
                 case "Client":
-                    var child = new EditClient(Connection, load, dataGridView1.CurrentRow);
-                    child.MdiParent = MdiParent;
-                    child.Show();
+                    child = new EditClient(Connection, load, dataGridView1.CurrentRow);
                     break;
+                case "Car":
+                    child = new EditCar(Connection, load, dataGridView1.CurrentRow);
+                    break;
+                default:
+                    throw new Exception();
             }
+            child.MdiParent = MdiParent;
+            child.Show();
         }
 
         private void Create_Click(object sender, System.EventArgs e)
         {
+            Form child;
             switch (table)
             {
                 case "Client":
-                    var child = new EditClient(Connection, load);
-                    child.MdiParent = MdiParent;
-                    child.Show();
+                    child = new EditClient(Connection, load);
                     break;
+                case "Car":
+                    child = new EditCar(Connection, load);
+                    break;
+                default:
+                    throw new Exception();
             }
+            child.MdiParent = MdiParent;
+            child.Show();
         }
     }
 }
