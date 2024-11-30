@@ -125,14 +125,18 @@
             // RentToolStripMenuItem
             // 
             this.RentToolStripMenuItem.Name = "RentToolStripMenuItem";
-            this.RentToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.RentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.RentToolStripMenuItem.Tag = "Rent";
             this.RentToolStripMenuItem.Text = "Аренда";
+            this.RentToolStripMenuItem.Click += new System.EventHandler(this.Table_Click);
             // 
             // MaintenanceToolStripMenuItem
             // 
             this.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem";
-            this.MaintenanceToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.MaintenanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.MaintenanceToolStripMenuItem.Tag = "Maintenance";
             this.MaintenanceToolStripMenuItem.Text = "Обслуживание";
+            this.MaintenanceToolStripMenuItem.Click += new System.EventHandler(this.Table_Click);
             // 
             // ReportsToolStripMenuItem
             // 
