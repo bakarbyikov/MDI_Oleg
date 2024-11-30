@@ -16,22 +16,19 @@ namespace MDI_Oleg
 
             this.Connection = Connection;
             this.table = table;
-            this.load(table);
+            load();
             hide();
+            
         }
 
         private void hide()
         {
-            
             foreach (DataGridViewColumn column in dataGridView1.Columns)
-            {
                 if (column.Name.Contains("ID"))
                     column.Visible = false;
-            }
-                
         }
 
-        private void load(string table)
+        private void load()
         {
             // TODO: use good sql client 
             var command = Connection.CreateCommand();
@@ -83,6 +80,45 @@ namespace MDI_Oleg
             var studentsTable = new DataTable();
             adapter.Fill(studentsTable);
             dataGridView1.DataSource = studentsTable;
+        }
+
+        private void Delete_Click(object sender, System.EventArgs e)
+        {
+            // TODO ask before delete
+            if (dataGridView1.RowCount == 0)
+            {
+                MessageBox.Show("Нет данных для удаления!");
+                return;
+            }
+            var target = dataGridView1.CurrentRow.Cells["ID"].Value;
+            var command = Connection.CreateCommand();
+            command.CommandText = $"DELETE FROM {table} WHERE ID = {target};";
+            command.ExecuteNonQuery();
+            load();
+        }
+
+        private void Edit_Click(object sender, System.EventArgs e)
+        {
+            switch (table)
+            {
+                case "Client":
+                    var child = new EditClient(Connection, load, dataGridView1.CurrentRow);
+                    child.MdiParent = MdiParent;
+                    child.Show();
+                    break;
+            }
+        }
+
+        private void Create_Click(object sender, System.EventArgs e)
+        {
+            switch (table)
+            {
+                case "Client":
+                    var child = new EditClient(Connection, load);
+                    child.MdiParent = MdiParent;
+                    child.Show();
+                    break;
+            }
         }
     }
 }

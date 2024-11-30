@@ -41,6 +41,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Create,
             this.Edit,
@@ -48,7 +49,7 @@
             this.Exit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(426, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -58,8 +59,9 @@
             this.Create.Image = ((System.Drawing.Image)(resources.GetObject("Create.Image")));
             this.Create.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(23, 22);
+            this.Create.Size = new System.Drawing.Size(24, 24);
             this.Create.Text = "Добавление данных";
+            this.Create.Click += new System.EventHandler(this.Create_Click);
             // 
             // Edit
             // 
@@ -67,8 +69,9 @@
             this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
             this.Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Edit.Name = "Edit";
-            this.Edit.Size = new System.Drawing.Size(23, 22);
+            this.Edit.Size = new System.Drawing.Size(24, 24);
             this.Edit.Text = "Редактирование данных";
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // Delete
             // 
@@ -76,8 +79,9 @@
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
             this.Delete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(23, 22);
+            this.Delete.Size = new System.Drawing.Size(24, 24);
             this.Delete.Text = "Удаление данных";
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Exit
             // 
@@ -85,23 +89,23 @@
             this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
             this.Exit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(23, 22);
+            this.Exit.Size = new System.Drawing.Size(24, 24);
             this.Exit.Text = "Выход";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 425);
+            this.dataGridView1.Size = new System.Drawing.Size(426, 162);
             this.dataGridView1.TabIndex = 1;
             // 
             // Table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(426, 189);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Table";
