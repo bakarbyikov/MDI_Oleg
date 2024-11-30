@@ -109,6 +109,9 @@ namespace MDI_Oleg
                 case "Car":
                     child = new EditCar(Connection, load, dataGridView1.CurrentRow);
                     break;
+                case "Service":
+                    child = new EditService(Connection, load, dataGridView1.CurrentRow);
+                    break;
                 default:
                     throw new Exception();
             }
@@ -126,6 +129,9 @@ namespace MDI_Oleg
                     break;
                 case "Car":
                     child = new EditCar(Connection, load);
+                    break;
+                case "Service":
+                    child = new EditService(Connection, load);
                     break;
                 default:
                     throw new Exception();

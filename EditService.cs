@@ -1,28 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Data.SQLite;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MDI_Oleg
 {
-    public partial class EditCar : Form
+    public partial class EditService : Form
     {
         private SQLiteConnection Connection;
         private long? row_ID;
         private Action onSave;
 
-        public EditCar(
+        public EditService(
             SQLiteConnection Connection,
             Action onSave,
             DataGridViewRow row
             ) : this(Connection, onSave)
         {
             row_ID = (long)row.Cells["ID"].Value;
-            Model.Text = (String)row.Cells["Model"].Value;
-            Year.Value = (long)row.Cells["Year"].Value;
-            Color.Text = (String)row.Cells["Color"].Value;
-            Number.Text = (String)row.Cells["Number"].Value;
+            Name_.Text = (String)row.Cells["Name"].Value;
+            Address.Text = (String)row.Cells["Address"].Value;
+            Payment_details.Text = (String)row.Cells["Payment_details"].Value;
         }
-        public EditCar(SQLiteConnection Connection, Action onSave)
+        public EditService(SQLiteConnection Connection, Action onSave)
         {
             InitializeComponent();
             this.Connection = Connection;
@@ -33,22 +39,20 @@ namespace MDI_Oleg
             var command = Connection.CreateCommand();
             if (row_ID is null)
                 command.CommandText = $@"
-                    INSERT INTO Car (Model, Year, Color, Number)
-                    VALUES ($Model, $Year, $Color, $Number);
+                    INSERT INTO Service (Name, Address, Payment_details)
+                    VALUES ($Name, $Address, $Payment_details);
                 ";
             else
                 command.CommandText = $@"
-                    UPDATE Car 
-                    SET Model = $Model,
-	                    Year = $Year,
-	                    Color = $Color,
-	                    Number = $Number
+                    UPDATE Service 
+                    SET Name = $Name,
+	                    Address = $Address,
+	                    Payment_details = $Payment_details
                     WHERE ID = $ID; 
                 ";
-            command.Parameters.AddWithValue("$Model", Model.Text);
-            command.Parameters.AddWithValue("$Year", Year.Text);
-            command.Parameters.AddWithValue("$Color", Color.Text);
-            command.Parameters.AddWithValue("$Number", Number.Text);
+            command.Parameters.AddWithValue("$Name", Name_.Text);
+            command.Parameters.AddWithValue("$Address", Address.Text);
+            command.Parameters.AddWithValue("$Payment_details", Payment_details.Text);
             command.Parameters.AddWithValue("$ID", row_ID);
             command.ExecuteNonQuery();
             onSave();
