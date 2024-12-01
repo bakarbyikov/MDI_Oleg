@@ -115,6 +115,9 @@ namespace MDI_Oleg
                 case "Rent":
                     child = new EditRent(Connection, load, dataGridView1.CurrentRow);
                     break;
+                case "Maintenance":
+                    child = new EditMaintenance(Connection, load, dataGridView1.CurrentRow);
+                    break;
                 default:
                     throw new Exception();
             }
@@ -138,6 +141,9 @@ namespace MDI_Oleg
                     break;
                 case "Rent":
                     child = new EditRent(Connection, load);
+                    break;
+                case "Maintenance":
+                    child = new EditMaintenance(Connection, load);
                     break;
                 default:
                     throw new Exception();
