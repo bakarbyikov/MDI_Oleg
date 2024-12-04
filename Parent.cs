@@ -8,21 +8,28 @@ namespace MDI_Oleg
 {
     public partial class FMDI : Form
     {
-        private string ConnrctionString = "Data Source=C:\\Users\\Олег\\" +
-            "Documents\\trbd\\MDI_Oleg\\oleg.db;Version=3;";
+        //private string ConnrctionString = "Data Source=C:\\Users\\Олег\\" + "Documents\\trbd\\MDI_Oleg\\oleg.db;Version=3;";
         private SQLiteConnection Connection;
         public FMDI()
         {
             InitializeComponent();
-            Connection = new SQLiteConnection(ConnrctionString);
-            Connection.Open();
+            //Connection = new SQLiteConnection(ConnrctionString);
+            //Connection.Open();
         }
 
 
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Connection.Close();
+            try
+            {
+                Connection.Close();
+
+            }
+            catch
+            {
+                //ErrorConnection();
+            }
         }
 
         private void LoadStudents()
@@ -56,10 +63,48 @@ namespace MDI_Oleg
 
         private void Table_Click(object sender, EventArgs e)
         {
-            string table = (string)(sender as ToolStripMenuItem).Tag;
-            var child = new Table(Connection, table);
-            child.MdiParent = this;
-            child.Show();
+            try
+            {
+                string table = (string)(sender as ToolStripMenuItem).Tag;
+                var child = new Table(Connection, table);
+                child.MdiParent = this;
+                child.Show();
+            }
+            catch 
+            {
+                ErrorConnection();
+            }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = ".sqlite or .db files (*.db,*.sqlite)|*.db;*.sqlite|All Files (*.*)|*.*";
+            string ConnrctionString;
+            var connrction = openFileDialog.ShowDialog();
+            if (connrction == DialogResult.OK)
+            {
+                ConnrctionString = openFileDialog.FileName;
+                ConnectSQLite(ConnrctionString);
+            }
+
+        }
+        private void ErrorConnection()
+        {
+            MessageBox.Show("Ошибка подключения к SQLite", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void ConnectSQLite(string path)
+        {
+            try
+            {
+                Connection = new SQLiteConnection(path);
+                Connection.Open();
+            }
+            catch 
+            {
+                ErrorConnection();
+            }
         }
     }
 }

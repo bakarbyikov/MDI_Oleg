@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FIleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,10 +68,18 @@
             // FIleToolStripMenuItem
             // 
             this.FIleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.FIleToolStripMenuItem.Name = "FIleToolStripMenuItem";
             this.FIleToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.FIleToolStripMenuItem.Text = "Файл";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Открыть";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
@@ -92,7 +101,7 @@
             // ClientsToolStripMenuItem
             // 
             this.ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem";
-            this.ClientsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ClientsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.ClientsToolStripMenuItem.Tag = "Client";
             this.ClientsToolStripMenuItem.Text = "Клиенты";
             this.ClientsToolStripMenuItem.Click += new System.EventHandler(this.Table_Click);
@@ -100,7 +109,7 @@
             // CarsToolStripMenuItem
             // 
             this.CarsToolStripMenuItem.Name = "CarsToolStripMenuItem";
-            this.CarsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CarsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.CarsToolStripMenuItem.Tag = "Car";
             this.CarsToolStripMenuItem.Text = "Машины";
             this.CarsToolStripMenuItem.Click += new System.EventHandler(this.Table_Click);
@@ -108,7 +117,7 @@
             // ServicesToolStripMenuItem
             // 
             this.ServicesToolStripMenuItem.Name = "ServicesToolStripMenuItem";
-            this.ServicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ServicesToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.ServicesToolStripMenuItem.Tag = "Service";
             this.ServicesToolStripMenuItem.Text = "Сервисы";
             this.ServicesToolStripMenuItem.Click += new System.EventHandler(this.Table_Click);
@@ -125,7 +134,7 @@
             // RentToolStripMenuItem
             // 
             this.RentToolStripMenuItem.Name = "RentToolStripMenuItem";
-            this.RentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.RentToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.RentToolStripMenuItem.Tag = "Rent";
             this.RentToolStripMenuItem.Text = "Аренда";
             this.RentToolStripMenuItem.Click += new System.EventHandler(this.Table_Click);
@@ -133,7 +142,7 @@
             // MaintenanceToolStripMenuItem
             // 
             this.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem";
-            this.MaintenanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.MaintenanceToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.MaintenanceToolStripMenuItem.Tag = "Maintenance";
             this.MaintenanceToolStripMenuItem.Text = "Обслуживание";
             this.MaintenanceToolStripMenuItem.Click += new System.EventHandler(this.Table_Click);
@@ -236,6 +245,7 @@
         private System.Windows.Forms.ToolStripMenuItem CascadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem HorizontalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VerticalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
     }
 }
 
