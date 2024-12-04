@@ -61,5 +61,12 @@ namespace MDI_Oleg
             child.MdiParent = this;
             child.Show();
         }
+
+        private void AvailableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var child = new ReportFree(Connection);
+            child.MdiParent = this;
+            child.Show();
+        }
     }
 }
