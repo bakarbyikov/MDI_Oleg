@@ -88,7 +88,12 @@ namespace MDI_Oleg
 
         private void Delete_Click(object sender, System.EventArgs e)
         {
-            // TODO ask before delete
+            var confirmResult = MessageBox.Show("Вы точно хотите удалить?",
+                                     "Подтвердите удаление",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.No)
+                return;
+            
             if (dataGridView1.RowCount == 0)
             {
                 MessageBox.Show("Нет данных для удаления!");
