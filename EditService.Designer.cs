@@ -31,10 +31,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Name_ = new System.Windows.Forms.TextBox();
             this.Address = new System.Windows.Forms.TextBox();
             this.Payment_details = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Name_ = new System.Windows.Forms.TextBox();
             this.Confirm = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -78,20 +78,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Адрес";
             // 
-            // Name_
-            // 
-            this.Name_.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_.Location = new System.Drawing.Point(76, 3);
-            this.Name_.Name = "Name_";
-            this.Name_.Size = new System.Drawing.Size(109, 16);
-            this.Name_.TabIndex = 3;
-            // 
             // Address
             // 
             this.Address.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Address.Location = new System.Drawing.Point(76, 41);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(109, 16);
+            this.Address.Size = new System.Drawing.Size(136, 20);
             this.Address.TabIndex = 4;
             // 
             // Payment_details
@@ -99,7 +91,7 @@
             this.Payment_details.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Payment_details.Location = new System.Drawing.Point(76, 79);
             this.Payment_details.Name = "Payment_details";
-            this.Payment_details.Size = new System.Drawing.Size(109, 16);
+            this.Payment_details.Size = new System.Drawing.Size(136, 20);
             this.Payment_details.TabIndex = 5;
             // 
             // label3
@@ -110,6 +102,14 @@
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Реквизиты";
+            // 
+            // Name_
+            // 
+            this.Name_.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Name_.Location = new System.Drawing.Point(76, 3);
+            this.Name_.Name = "Name_";
+            this.Name_.Size = new System.Drawing.Size(136, 20);
+            this.Name_.TabIndex = 3;
             // 
             // Confirm
             // 
