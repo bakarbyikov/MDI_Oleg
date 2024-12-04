@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SQLite;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace MDI_Oleg
@@ -32,6 +33,13 @@ namespace MDI_Oleg
         private void save()
         {
             var command = Connection.CreateCommand();
+            
+            if (!(IsValidRuPhoneNumber(Phone.Text)))
+            {
+                MessageBox.Show("Введен несуществующий номер телефона", "Неправильный формат номера телефона.", MessageBoxButtons.OK);
+                return;
+            }
+
             if (row_ID is null)
                 command.CommandText = $@"
                     INSERT INTO Client (Name, License, Birthday, Phone)
@@ -54,6 +62,15 @@ namespace MDI_Oleg
             command.ExecuteNonQuery();
             onSave();
         }
+
+
+        static bool IsValidRuPhoneNumber(string number)
+        {
+            string pattern = @"^(\+7|8)\s*$?\d{3}$?\s*\d{3}[- ]?\d{2}[- ]?\d{2}$";
+            return Regex.IsMatch(number, pattern);
+        }
+
+
 
         private void Cancel_Click(object sender, EventArgs e)
         {

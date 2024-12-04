@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SQLite;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace MDI_Oleg
@@ -31,6 +32,11 @@ namespace MDI_Oleg
         private void save()
         {
             var command = Connection.CreateCommand();
+            if (!IsValidNumberPlate(Number.Text))
+            {
+                MessageBox.Show("Введен некорректный формат номера машины", "Неправильный номер машины.", MessageBoxButtons.OK);
+                return;
+            }
             if (row_ID is null)
                 command.CommandText = $@"
                     INSERT INTO Car (Model, Year, Color, Number)
@@ -52,6 +58,12 @@ namespace MDI_Oleg
             command.Parameters.AddWithValue("$ID", row_ID);
             command.ExecuteNonQuery();
             onSave();
+        }
+
+        private static bool IsValidNumberPlate(string plate)
+        {
+            string pattern = @"^[А-Я]{1}[0-9]{3}[А-Я]{2} \d{2}$";
+            return Regex.IsMatch(plate, pattern);
         }
 
         private void Cancel_Click(object sender, EventArgs e)
