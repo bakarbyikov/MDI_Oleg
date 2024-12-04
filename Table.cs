@@ -154,5 +154,10 @@ namespace MDI_Oleg
             child.MdiParent = MdiParent;
             child.Show();
         }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

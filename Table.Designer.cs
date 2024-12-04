@@ -91,6 +91,7 @@
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(24, 24);
             this.Exit.Text = "Выход";
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // dataGridView1
             // 
