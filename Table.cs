@@ -81,7 +81,10 @@ namespace MDI_Oleg
             var studentsTable = new DataTable();
             adapter.Fill(studentsTable);
             dataGridView1.DataSource = studentsTable;
+            //dataGridView1.ReadOnly = true;
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
+
 
         private void Delete_Click(object sender, System.EventArgs e)
         {
