@@ -98,7 +98,7 @@ namespace MDI_Oleg
         {
             try
             {
-                Connection = new SQLiteConnection(path);
+                Connection = new SQLiteConnection($"Data Source={path};Version=3;");
                 Connection.Open();
             }
             catch 

@@ -1,6 +1,6 @@
 1. Валидация
 2. перевод названий столбцов
-3. ADO.NET
+3. ADO.NET +
 4. Excel +-
 5. Word
 6. Parallel
