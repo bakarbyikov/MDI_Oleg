@@ -70,7 +70,7 @@ namespace MDI_Oleg
                 child.MdiParent = this;
                 child.Show();
             }
-            catch 
+            catch
             {
                 ErrorConnection();
             }
@@ -101,10 +101,17 @@ namespace MDI_Oleg
                 Connection = new SQLiteConnection($"Data Source={path};Version=3;");
                 Connection.Open();
             }
-            catch 
+            catch
             {
                 ErrorConnection();
             }
+        }
+
+        private void AvailableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var child = new ReportFree(Connection);
+            child.MdiParent = this;
+            child.Show();
         }
     }
 }
