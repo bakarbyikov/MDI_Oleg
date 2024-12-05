@@ -31,12 +31,12 @@ namespace MDI_Oleg
             command.CommandText = $@"
                 SELECT 
                     Car.ID,
-                    Model,
-                    Year,
-                    Color,
-                    Number,
-                    COUNT(Rent.id) AS N_Rents,
-                    COUNT(Maintenance.id) AS N_Maintenances
+                    Model AS Модель,
+                    Year AS Год,
+                    Color AS Цвет,
+                    Number AS Номер,
+                    COUNT(Rent.id) AS ""Число аренд"",
+                    COUNT(Maintenance.id) AS ""Число обслуживаний""
                 FROM 
                     Car
                 LEFT JOIN 

@@ -57,17 +57,11 @@ namespace MDI_Oleg
 
         private void Table_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string table = (string)(sender as ToolStripMenuItem).Tag;
-                var child = new Table(Connection, table);
-                child.MdiParent = this;
-                child.Show();
-            }
-            catch
-            {
-                ErrorConnection();
-            }
+            if (Connection == null) { ErrorConnection(); return; }
+            string table = (string)(sender as ToolStripMenuItem).Tag;
+            var child = new Table(Connection, table);
+            child.MdiParent = this;
+            child.Show();
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)

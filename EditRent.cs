@@ -18,9 +18,9 @@ namespace MDI_Oleg
             ) : this(Connection, onSave)
         {
             row_ID = (long)row.Cells["ID"].Value;
-            Start.Text = (String)row.Cells["Start"].Value;
-            End.Text = (String)row.Cells["End"].Value;
-            Price.Text = (String)row.Cells["Price"].Value.ToString();
+            Start.Text = (String)row.Cells["Начало"].Value;
+            End.Text = (String)row.Cells["Конец"].Value;
+            Price.Text = (String)row.Cells["Цена"].Value.ToString();
             Client.SelectedIndex = Convert.ToInt32((long)row.Cells["Client_ID"].Value);
             Car.SelectedIndex = Convert.ToInt32((long)row.Cells["Car_ID"].Value);
         }

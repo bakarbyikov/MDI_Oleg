@@ -35,18 +35,51 @@ namespace MDI_Oleg
             var command = Connection.CreateCommand();
             switch (table)
             {
+                case "Client":
+                    this.Text = "Клиент";
+                    command.CommandText = $@"
+                        SELECT 
+                          ID,
+                          Name AS ФИО,
+                          License AS Права,
+                          Birthday AS ""Дата рождения"",
+                          Phone AS Телефон
+                        FROM Client";
+                    break;
+                case "Car":
+                    this.Text = "Машина";
+                    command.CommandText = $@"
+                        SELECT 
+                          ID,
+                          Model AS Модель, 
+                          ""Year"" AS Год,
+                          Color AS Цвет,
+                          ""Number"" AS Номер
+                        FROM Car";
+                    break;
+                case "Service":
+                    this.Text = "Сервис";
+                    command.CommandText = $@"
+                        SELECT 
+                          ID,
+                          Name AS Название,
+                          Address AS Адресс,
+                          Payment_details AS Реквизиты
+                        FROM Service";
+                    break;
                 case "Rent":
+                    this.Text = "Аренда";
                     command.CommandText = $@"
                     SELECT 
 	                    Client.ID as Client_ID,
-	                    Client.Name,
+	                    Client.Name as Клиент,
 	                    Car.ID as Car_ID,
-	                    Car.Model,
-	                    Car.Color,
+	                    Car.Model as Модель,
+	                    Car.Color as Цвет,
 	                    Rent.ID,
-	                    Rent.Start,
-	                    Rent.End,
-	                    Rent.Price
+	                    Rent.Start as Начало,
+	                    Rent.End as Конец,
+	                    Rent.Price as Цена
                     FROM Rent
                     JOIN Car
                       ON Rent.Car = Car.ID 
@@ -55,17 +88,18 @@ namespace MDI_Oleg
                     ";
                     break;
                 case "Maintenance":
+                    this.Text = "Обслуживание";
                     command.CommandText = $@"
                     SELECT 
                         Service.ID as Service_ID,
-                        Service.Name,
+                        Service.Name as Название,
                         Car.ID as Car_ID,
-                        Car.Model,
-                        Car.Color,
+                        Car.Model as Модель,
+                        Car.Color as Цвет,
                         Maintenance.ID,
-                        Maintenance.Start,
-                        Maintenance.End,
-                        Maintenance.Price
+                        Maintenance.Start as Начало,
+                        Maintenance.End as Конец,
+                        Maintenance.Price as Цена
                     FROM Maintenance
                     JOIN Car
                       ON Maintenance.Car = Car.ID 
@@ -81,7 +115,7 @@ namespace MDI_Oleg
             var studentsTable = new DataTable();
             adapter.Fill(studentsTable);
             dataGridView1.DataSource = studentsTable;
-            //dataGridView1.ReadOnly = true;
+            dataGridView1.ReadOnly = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 

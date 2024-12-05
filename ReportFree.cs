@@ -22,7 +22,13 @@ namespace MDI_Oleg
         {
             var command = Connection.CreateCommand();
             command.CommandText = $@"
-                SELECT * FROM Car
+                SELECT 
+                  ID AS Код,
+                  Model AS Модель, 
+                  ""Year"" AS Год,
+                  Color AS Цвет,
+                  ""Number"" AS Номер
+                FROM Car
                 WHERE ID NOT IN (
                 SELECT Car FROM Rent
                 WHERE End > $Start
@@ -31,8 +37,7 @@ namespace MDI_Oleg
                 SELECT Car FROM Maintenance
                 WHERE End > $Start
                   AND Start < $End
-                );
-            ";
+                );";
             command.Parameters.AddWithValue("$Start", Start.Value);
             command.Parameters.AddWithValue("$End", End.Value);
 

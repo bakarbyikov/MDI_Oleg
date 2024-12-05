@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.DateTimePicker();
             this.End = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Cancel
@@ -66,30 +68,51 @@
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(15, 46);
+            this.Start.Location = new System.Drawing.Point(43, 46);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(187, 22);
             this.Start.TabIndex = 3;
             // 
             // End
             // 
-            this.End.Location = new System.Drawing.Point(15, 74);
+            this.End.Location = new System.Drawing.Point(43, 74);
             this.End.Name = "End";
             this.End.Size = new System.Drawing.Size(187, 22);
             this.End.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 16);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "С";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(25, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "По";
             // 
             // ReportFree
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(223, 153);
+            this.ClientSize = new System.Drawing.Size(244, 153);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.End);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.Cancel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ReportFree";
-            this.Text = "ReportFree";
+            this.Text = "Свободные машины";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +125,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker Start;
         private System.Windows.Forms.DateTimePicker End;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

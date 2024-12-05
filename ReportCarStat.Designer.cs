@@ -70,8 +70,9 @@
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ReportCarStat";
-            this.Text = "ReportCarStat";
+            this.Text = "Статистика машин";
             this.ResumeLayout(false);
             this.PerformLayout();
 
