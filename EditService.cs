@@ -17,9 +17,9 @@ namespace MDI_Oleg
             ) : this(Connection, onSave)
         {
             row_ID = (long)row.Cells["ID"].Value;
-            Name_.Text = (String)row.Cells["Name"].Value;
-            Address.Text = (String)row.Cells["Address"].Value;
-            Payment_details.Text = (String)row.Cells["Payment_details"].Value;
+            Name_.Text = (String)row.Cells["Название"].Value;
+            Address.Text = (String)row.Cells["Адрес"].Value;
+            Payment_details.Text = (String)row.Cells["Реквизиты"].Value;
         }
         public EditService(SQLiteConnection Connection, Action onSave)
         {

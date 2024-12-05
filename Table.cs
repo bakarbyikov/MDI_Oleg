@@ -63,7 +63,7 @@ namespace MDI_Oleg
                         SELECT 
                           ID,
                           Name AS Название,
-                          Address AS Адресс,
+                          Address AS Адрес,
                           Payment_details AS Реквизиты
                         FROM Service";
                     break;

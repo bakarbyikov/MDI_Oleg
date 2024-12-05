@@ -45,64 +45,72 @@
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(3, 0);
+            this.NameLabel.Location = new System.Drawing.Point(4, 0);
+            this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(34, 13);
+            this.NameLabel.Size = new System.Drawing.Size(38, 16);
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "ФИО";
             // 
             // Name_
             // 
-            this.Name_.Location = new System.Drawing.Point(114, 3);
+            this.Name_.Location = new System.Drawing.Point(153, 4);
+            this.Name_.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name_.Name = "Name_";
-            this.Name_.Size = new System.Drawing.Size(200, 20);
+            this.Name_.Size = new System.Drawing.Size(265, 22);
             this.Name_.TabIndex = 1;
             // 
             // License
             // 
-            this.License.Location = new System.Drawing.Point(114, 46);
+            this.License.Location = new System.Drawing.Point(153, 57);
+            this.License.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.License.Name = "License";
-            this.License.Size = new System.Drawing.Size(200, 20);
+            this.License.Size = new System.Drawing.Size(265, 22);
             this.License.TabIndex = 2;
             // 
             // Birthday
             // 
-            this.Birthday.Location = new System.Drawing.Point(114, 89);
+            this.Birthday.Location = new System.Drawing.Point(153, 110);
+            this.Birthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Birthday.Name = "Birthday";
-            this.Birthday.Size = new System.Drawing.Size(200, 20);
+            this.Birthday.Size = new System.Drawing.Size(265, 22);
             this.Birthday.TabIndex = 3;
             // 
             // Phone
             // 
-            this.Phone.Location = new System.Drawing.Point(114, 132);
+            this.Phone.Location = new System.Drawing.Point(153, 163);
+            this.Phone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(200, 20);
+            this.Phone.Size = new System.Drawing.Size(265, 22);
             this.Phone.TabIndex = 4;
             // 
             // LicenseLabel
             // 
             this.LicenseLabel.AutoSize = true;
-            this.LicenseLabel.Location = new System.Drawing.Point(3, 43);
+            this.LicenseLabel.Location = new System.Drawing.Point(4, 53);
+            this.LicenseLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LicenseLabel.Name = "LicenseLabel";
-            this.LicenseLabel.Size = new System.Drawing.Size(39, 13);
+            this.LicenseLabel.Size = new System.Drawing.Size(49, 16);
             this.LicenseLabel.TabIndex = 5;
             this.LicenseLabel.Text = "Права";
             // 
             // BirthdayLabel
             // 
             this.BirthdayLabel.AutoSize = true;
-            this.BirthdayLabel.Location = new System.Drawing.Point(3, 86);
+            this.BirthdayLabel.Location = new System.Drawing.Point(4, 106);
+            this.BirthdayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BirthdayLabel.Name = "BirthdayLabel";
-            this.BirthdayLabel.Size = new System.Drawing.Size(86, 13);
+            this.BirthdayLabel.Size = new System.Drawing.Size(106, 16);
             this.BirthdayLabel.TabIndex = 6;
             this.BirthdayLabel.Text = "Дата рождения";
             // 
             // PhoneLabel
             // 
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(3, 129);
+            this.PhoneLabel.Location = new System.Drawing.Point(4, 159);
+            this.PhoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(52, 13);
+            this.PhoneLabel.Size = new System.Drawing.Size(67, 16);
             this.PhoneLabel.TabIndex = 7;
             this.PhoneLabel.Text = "Телефон";
             // 
@@ -119,23 +127,24 @@
             this.tableLayoutPanel1.Controls.Add(this.Birthday, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.LicenseLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.License, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(29, 29);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(20);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(39, 36);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(27, 25, 27, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(336, 174);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(448, 214);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(209, 204);
+            this.Cancel.Location = new System.Drawing.Point(279, 251);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 23);
+            this.Cancel.Size = new System.Drawing.Size(100, 28);
             this.Cancel.TabIndex = 8;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
@@ -143,9 +152,10 @@
             // 
             // Confirm
             // 
-            this.Confirm.Location = new System.Drawing.Point(290, 204);
+            this.Confirm.Location = new System.Drawing.Point(387, 251);
+            this.Confirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Confirm.Name = "Confirm";
-            this.Confirm.Size = new System.Drawing.Size(75, 23);
+            this.Confirm.Size = new System.Drawing.Size(100, 28);
             this.Confirm.TabIndex = 9;
             this.Confirm.Text = "Сохранить";
             this.Confirm.UseVisualStyleBackColor = true;
@@ -153,14 +163,15 @@
             // 
             // EditClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(421, 262);
+            this.ClientSize = new System.Drawing.Size(561, 322);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.Cancel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditClient";
             this.Text = "EditClient";
             this.tableLayoutPanel1.ResumeLayout(false);

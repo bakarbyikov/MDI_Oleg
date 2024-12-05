@@ -18,10 +18,10 @@ namespace MDI_Oleg
             ) : this(Connection, onSave)
         {
             row_ID = (long)row.Cells["ID"].Value;
-            Model.Text = (String)row.Cells["Model"].Value;
-            Year.Value = (long)row.Cells["Year"].Value;
-            Color.Text = (String)row.Cells["Color"].Value;
-            Number.Text = (String)row.Cells["Number"].Value;
+            Model.Text = (String)row.Cells["Модель"].Value;
+            Year.Value = (long)row.Cells["Год"].Value;
+            Color.Text = (String)row.Cells["Цвет"].Value;
+            Number.Text = (String)row.Cells["Номер"].Value;
         }
         public EditCar(SQLiteConnection Connection, Action onSave)
         {
@@ -29,14 +29,28 @@ namespace MDI_Oleg
             this.Connection = Connection;
             this.onSave = onSave;
         }
-        private void save()
+
+        bool validasion()
         {
-            var command = Connection.CreateCommand();
             if (!IsValidNumberPlate(Number.Text))
             {
                 MessageBox.Show("Введен некорректный формат номера машины", "Неправильный номер машины.", MessageBoxButtons.OK);
-                return;
+                return false;
             }
+            if (Year.Value > DateTime.Today.Year)
+            {
+                MessageBox.Show(
+                    "Не может быть год выпуска машины быть позже текущего",
+                    "Некорректный год выпуска машины",
+                    MessageBoxButtons.OK);
+                return false;
+            }
+            return true;
+        }
+        private bool save()
+        {
+            var command = Connection.CreateCommand();
+            if (!validasion() ) { return false; }
             if (row_ID is null)
                 command.CommandText = $@"
                     INSERT INTO Car (Model, Year, Color, Number)
@@ -58,11 +72,12 @@ namespace MDI_Oleg
             command.Parameters.AddWithValue("$ID", row_ID);
             command.ExecuteNonQuery();
             onSave();
+            return true;
         }
 
         private static bool IsValidNumberPlate(string plate)
         {
-            string pattern = @"^[А-Я]{1}[0-9]{3}[А-Я]{2} \d{2}$";
+            string pattern = @"^[АВЕКМНОРСТУХ]{1} \d{3} [АВЕКМНОРСТУХ]{2} \d{2,3}$";
             return Regex.IsMatch(plate, pattern);
         }
 
@@ -73,8 +88,8 @@ namespace MDI_Oleg
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            save();
-            this.Close();
+            if (save())
+                this.Close();
         }
     }
 }

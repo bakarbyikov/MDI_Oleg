@@ -18,10 +18,10 @@ namespace MDI_Oleg
             ) : this(Connection, onSave)
         {
             row_ID = (long)row.Cells["ID"].Value;
-            Name_.Text = (String)row.Cells["Name"].Value;
-            License.Text = (String)row.Cells["License"].Value;
-            Birthday.Text = (String)row.Cells["Birthday"].Value;
-            Phone.Text = (String)row.Cells["Phone"].Value;
+            Name_.Text = (String)row.Cells["ФИО"].Value;
+            License.Text = (String)row.Cells["Права"].Value;
+            Birthday.Text = (String)row.Cells["Дата рождения"].Value;
+            Phone.Text = (String)row.Cells["Телефон"].Value;
         }
         public EditClient(SQLiteConnection Connection, Action onSave)
         {
@@ -30,15 +30,39 @@ namespace MDI_Oleg
             this.onSave = onSave;
         }
 
-        private void save()
+        bool validasion()
         {
-            var command = Connection.CreateCommand();
-            
+            if (!IsValidLicense(License.Text))
+            {
+                MessageBox.Show(
+                    "Принимается номер прав в формате '01 23 456789'",
+                    "Некорректый формат прав",
+                    MessageBoxButtons.OK);
+                return false;
+            }
+            if ((DateTime.Now - Birthday.Value) < TimeSpan.FromDays(365 * 21))
+            {
+                MessageBox.Show(
+                    "Не дорос еще машину арендовать, только с 21 можно.",
+                    "Больно мал парнишка",
+                    MessageBoxButtons.OK);
+                return false;
+            }
             if (!(IsValidRuPhoneNumber(Phone.Text)))
             {
-                MessageBox.Show("Введен несуществующий номер телефона", "Неправильный формат номера телефона.", MessageBoxButtons.OK);
-                return;
+                MessageBox.Show(
+                    "Введен несуществующий номер телефона", 
+                    "Неправильный формат номера телефона.", 
+                    MessageBoxButtons.OK);
+                return false;
             }
+            return true;
+        }
+
+        private bool save()
+        {
+            var command = Connection.CreateCommand();
+            if (!validasion()) { return false; }
 
             if (row_ID is null)
                 command.CommandText = $@"
@@ -56,20 +80,27 @@ namespace MDI_Oleg
                 ";
             command.Parameters.AddWithValue("$Name", Name_.Text);
             command.Parameters.AddWithValue("$License", License.Text);
-            command.Parameters.AddWithValue("$Birthday", Birthday.Text);
+            command.Parameters.AddWithValue("$Birthday", 
+                Birthday.Value.ToString("yyyy-MM-dd"));
             command.Parameters.AddWithValue("$Phone", Phone.Text);
             command.Parameters.AddWithValue("$ID", row_ID);
             command.ExecuteNonQuery();
             onSave();
+            return true;
         }
 
 
         static bool IsValidRuPhoneNumber(string number)
         {
-            string pattern = @"^(\+7|8)\s*$?\d{3}$?\s*\d{3}[- ]?\d{2}[- ]?\d{2}$";
+            string pattern = @"^\+7 \d{3} \d{3}-\d{2}-\d{2}$";
             return Regex.IsMatch(number, pattern);
         }
 
+        static bool IsValidLicense(string license)
+        {
+            string pattern = @"^\d{2} \d{2} \d{6}$";
+            return Regex.IsMatch(license, pattern);
+        }
 
 
         private void Cancel_Click(object sender, EventArgs e)
@@ -79,8 +110,8 @@ namespace MDI_Oleg
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            save();
-            this.Close();
+            if (save())
+                this.Close();
         }
     }
 }
