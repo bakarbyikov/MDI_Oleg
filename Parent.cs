@@ -108,5 +108,13 @@ namespace MDI_Oleg
             child.MdiParent = this;
             child.Show();
         }
+
+        private void CarStatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Connection == null) { ErrorConnection(); return; }
+            var child = new ReportCarStat(Connection);
+            child.MdiParent = this;
+            child.Show();
+        }
     }
 }

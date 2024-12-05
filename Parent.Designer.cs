@@ -41,7 +41,7 @@
             this.MaintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AvailableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.IncomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CarStatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExpensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CascadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +72,7 @@
             this.openToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.FIleToolStripMenuItem.Name = "FIleToolStripMenuItem";
-            this.FIleToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.FIleToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.FIleToolStripMenuItem.Text = "Файл";
             // 
             // openToolStripMenuItem
@@ -96,7 +96,7 @@
             this.CarsToolStripMenuItem,
             this.ServicesToolStripMenuItem});
             this.TablesToolStripMenuItem.Name = "TablesToolStripMenuItem";
-            this.TablesToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
+            this.TablesToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.TablesToolStripMenuItem.Text = "Основные таблицы";
             // 
             // ClientsToolStripMenuItem
@@ -129,7 +129,7 @@
             this.RentToolStripMenuItem,
             this.MaintenanceToolStripMenuItem});
             this.AnotherTablesToolStripMenuItem.Name = "AnotherTablesToolStripMenuItem";
-            this.AnotherTablesToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.AnotherTablesToolStripMenuItem.Size = new System.Drawing.Size(115, 26);
             this.AnotherTablesToolStripMenuItem.Text = "Еще таблицы";
             // 
             // RentToolStripMenuItem
@@ -152,7 +152,7 @@
             // 
             this.ReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AvailableToolStripMenuItem,
-            this.IncomeToolStripMenuItem,
+            this.CarStatToolStripMenuItem,
             this.ExpensesToolStripMenuItem});
             this.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem";
             this.ReportsToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
@@ -165,17 +165,19 @@
             this.AvailableToolStripMenuItem.Text = "Доступные машины";
             this.AvailableToolStripMenuItem.Click += new System.EventHandler(this.AvailableToolStripMenuItem_Click);
             // 
-            // IncomeToolStripMenuItem
+            // CarStatToolStripMenuItem
             // 
-            this.IncomeToolStripMenuItem.Name = "IncomeToolStripMenuItem";
-            this.IncomeToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.IncomeToolStripMenuItem.Text = "Доходы";
+            this.CarStatToolStripMenuItem.Name = "CarStatToolStripMenuItem";
+            this.CarStatToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.CarStatToolStripMenuItem.Text = "Статистика машины";
+            this.CarStatToolStripMenuItem.Click += new System.EventHandler(this.CarStatToolStripMenuItem_Click);
             // 
             // ExpensesToolStripMenuItem
             // 
             this.ExpensesToolStripMenuItem.Name = "ExpensesToolStripMenuItem";
             this.ExpensesToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
             this.ExpensesToolStripMenuItem.Text = "Расходы";
+            this.ExpensesToolStripMenuItem.Visible = false;
             // 
             // WindowToolStripMenuItem
             // 
@@ -184,7 +186,7 @@
             this.HorizontalToolStripMenuItem,
             this.VerticalToolStripMenuItem});
             this.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem";
-            this.WindowToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.WindowToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.WindowToolStripMenuItem.Text = "Окно";
             // 
             // CascadToolStripMenuItem
@@ -242,7 +244,7 @@
         private System.Windows.Forms.ToolStripMenuItem MaintenanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ReportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AvailableToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem IncomeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CarStatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExpensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CascadToolStripMenuItem;
