@@ -21,15 +21,9 @@ namespace MDI_Oleg
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            try
-            {
-                Connection.Close();
-
-            }
-            catch
-            {
-                //ErrorConnection();
-            }
+            if (Connection == null) return;
+            try { Connection.Close(); }
+            catch { }
         }
 
         private void LoadStudents()
@@ -109,6 +103,7 @@ namespace MDI_Oleg
 
         private void AvailableToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (Connection == null) { ErrorConnection(); return; }
             var child = new ReportFree(Connection);
             child.MdiParent = this;
             child.Show();
