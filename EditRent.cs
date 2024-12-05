@@ -54,6 +54,14 @@ namespace MDI_Oleg
         private void save()
         {
             var command = Connection.CreateCommand();
+            if (Start.Value > End.Value)
+            {
+                MessageBox.Show(
+                    "Начало аренды не может быть позже даты конца",
+                    "Неправильная дата",
+                    MessageBoxButtons.OK);
+                return;
+            }
             if (row_ID is null)
                 command.CommandText = $@"
                     INSERT INTO Rent (Client, Car, Start, End, Price)
@@ -77,6 +85,7 @@ namespace MDI_Oleg
             command.Parameters.AddWithValue("$ID", row_ID);
             command.ExecuteNonQuery();
             onSave();
+            this.Close();
         }
 
         private void Cancel_Click(object sender, EventArgs e)
@@ -87,7 +96,6 @@ namespace MDI_Oleg
         private void Confirm_Click(object sender, EventArgs e)
         {
             save();
-            this.Close();
         }
     }
 }

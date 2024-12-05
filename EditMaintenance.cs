@@ -59,6 +59,14 @@ namespace MDI_Oleg
         }
         private void save()
         {
+            if (Start.Value > End.Value)
+            {
+                MessageBox.Show(
+                    "Начало обслуживания не может быть позже даты конца",
+                    "Неправильная дата",
+                    MessageBoxButtons.OK);
+                return;
+            }
             var command = Connection.CreateCommand();
             if (row_ID is null)
                 command.CommandText = $@"
@@ -83,6 +91,7 @@ namespace MDI_Oleg
             command.Parameters.AddWithValue("$ID", row_ID);
             command.ExecuteNonQuery();
             onSave();
+            this.Close();
         }
 
         private void Cancel_Click(object sender, EventArgs e)
@@ -93,7 +102,6 @@ namespace MDI_Oleg
         private void Confirm_Click(object sender, EventArgs e)
         {
             save();
-            this.Close();
         }
     }
 }
