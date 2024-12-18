@@ -128,6 +128,7 @@
             // Service
             // 
             this.Service.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Service.FormattingEnabled = true;
             this.Service.Location = new System.Drawing.Point(70, 45);
             this.Service.Name = "Service";

@@ -128,6 +128,7 @@
             // Car
             // 
             this.Car.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Car.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Car.FormattingEnabled = true;
             this.Car.Location = new System.Drawing.Point(63, 46);
             this.Car.Name = "Car";
