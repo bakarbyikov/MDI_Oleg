@@ -38,9 +38,9 @@
             this.Car = new System.Windows.Forms.ComboBox();
             this.Start = new System.Windows.Forms.DateTimePicker();
             this.End = new System.Windows.Forms.DateTimePicker();
+            this.Price = new System.Windows.Forms.NumericUpDown();
             this.Confirm = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
-            this.Price = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Price)).BeginInit();
             this.SuspendLayout();
@@ -148,6 +148,20 @@
             this.End.Size = new System.Drawing.Size(200, 20);
             this.End.TabIndex = 9;
             // 
+            // Price
+            // 
+            this.Price.DecimalPlaces = 2;
+            this.Price.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Price.Location = new System.Drawing.Point(63, 175);
+            this.Price.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.Price.Name = "Price";
+            this.Price.Size = new System.Drawing.Size(203, 20);
+            this.Price.TabIndex = 10;
+            // 
             // Confirm
             // 
             this.Confirm.Location = new System.Drawing.Point(206, 234);
@@ -168,20 +182,6 @@
             this.Cancel.UseVisualStyleBackColor = true;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
-            // Price
-            // 
-            this.Price.DecimalPlaces = 2;
-            this.Price.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Price.Location = new System.Drawing.Point(63, 175);
-            this.Price.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(203, 20);
-            this.Price.TabIndex = 10;
-            // 
             // EditRent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +190,8 @@
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MaximumSize = new System.Drawing.Size(321, 317);
+            this.MinimumSize = new System.Drawing.Size(321, 317);
             this.Name = "EditRent";
             this.Text = "EditRent";
             this.tableLayoutPanel1.ResumeLayout(false);

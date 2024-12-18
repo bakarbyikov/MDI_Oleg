@@ -39,9 +39,10 @@
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(15, 118);
+            this.Cancel.Location = new System.Drawing.Point(11, 96);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 23);
+            this.Cancel.Size = new System.Drawing.Size(56, 19);
             this.Cancel.TabIndex = 0;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // 
             // Confirm
             // 
-            this.Confirm.Location = new System.Drawing.Point(101, 118);
+            this.Confirm.Location = new System.Drawing.Point(76, 96);
+            this.Confirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Confirm.Name = "Confirm";
-            this.Confirm.Size = new System.Drawing.Size(101, 23);
+            this.Confirm.Size = new System.Drawing.Size(76, 19);
             this.Confirm.TabIndex = 1;
             this.Confirm.Text = "Сохранить";
             this.Confirm.UseVisualStyleBackColor = true;
@@ -60,49 +62,54 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(9, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 16);
+            this.label1.Size = new System.Drawing.Size(151, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Отчет о свободных машинах";
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(43, 46);
+            this.Start.Location = new System.Drawing.Point(32, 37);
+            this.Start.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(187, 22);
+            this.Start.Size = new System.Drawing.Size(141, 20);
             this.Start.TabIndex = 3;
             // 
             // End
             // 
-            this.End.Location = new System.Drawing.Point(43, 74);
+            this.End.Location = new System.Drawing.Point(32, 60);
+            this.End.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.End.Name = "End";
-            this.End.Size = new System.Drawing.Size(187, 22);
+            this.End.Size = new System.Drawing.Size(141, 20);
             this.End.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 46);
+            this.label2.Location = new System.Drawing.Point(9, 37);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 16);
+            this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "С";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 74);
+            this.label3.Location = new System.Drawing.Point(9, 60);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 16);
+            this.label3.Size = new System.Drawing.Size(21, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "По";
             // 
             // ReportFree
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 153);
+            this.ClientSize = new System.Drawing.Size(183, 124);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.End);
@@ -111,6 +118,9 @@
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.Cancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(203, 167);
+            this.MinimumSize = new System.Drawing.Size(203, 167);
             this.Name = "ReportFree";
             this.Text = "Свободные машины";
             this.ResumeLayout(false);

@@ -168,8 +168,11 @@
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MaximumSize = new System.Drawing.Size(266, 249);
+            this.MinimumSize = new System.Drawing.Size(266, 249);
             this.Name = "EditCar";
             this.Text = "EditCar";
+            this.Load += new System.EventHandler(this.EditCar_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Year)).EndInit();

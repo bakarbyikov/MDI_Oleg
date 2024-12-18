@@ -139,6 +139,8 @@
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MaximumSize = new System.Drawing.Size(259, 223);
+            this.MinimumSize = new System.Drawing.Size(259, 223);
             this.Name = "EditService";
             this.Text = "EditService";
             this.tableLayoutPanel1.ResumeLayout(false);

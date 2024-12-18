@@ -91,5 +91,10 @@ namespace MDI_Oleg
             if (save())
                 this.Close();
         }
+
+        private void EditCar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
