@@ -34,8 +34,8 @@
             this.Edit = new System.Windows.Forms.ToolStripButton();
             this.Delete = new System.Windows.Forms.ToolStripButton();
             this.Exit = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Reload = new System.Windows.Forms.ToolStripButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             this.Reload});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(568, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(568, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -61,7 +61,7 @@
             this.Create.Image = ((System.Drawing.Image)(resources.GetObject("Create.Image")));
             this.Create.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(29, 24);
+            this.Create.Size = new System.Drawing.Size(29, 28);
             this.Create.Text = "Добавление данных";
             this.Create.Click += new System.EventHandler(this.Create_Click);
             // 
@@ -71,7 +71,7 @@
             this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
             this.Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Edit.Name = "Edit";
-            this.Edit.Size = new System.Drawing.Size(29, 24);
+            this.Edit.Size = new System.Drawing.Size(29, 28);
             this.Edit.Text = "Редактирование данных";
             this.Edit.Click += new System.EventHandler(this.Edit_Click);
             // 
@@ -81,7 +81,7 @@
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
             this.Delete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(29, 24);
+            this.Delete.Size = new System.Drawing.Size(29, 28);
             this.Delete.Text = "Удаление данных";
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
@@ -91,9 +91,19 @@
             this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
             this.Exit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(29, 24);
+            this.Exit.Size = new System.Drawing.Size(29, 28);
             this.Exit.Text = "Выход";
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // Reload
+            // 
+            this.Reload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Reload.Image = ((System.Drawing.Image)(resources.GetObject("Reload.Image")));
+            this.Reload.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(29, 28);
+            this.Reload.Text = "Обновить";
+            this.Reload.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // dataGridView1
             // 
@@ -102,23 +112,13 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 31);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(568, 206);
+            this.dataGridView1.Size = new System.Drawing.Size(568, 202);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // Reload
-            // 
-            this.Reload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Reload.Image = ((System.Drawing.Image)(resources.GetObject("Reload.Image")));
-            this.Reload.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Reload.Name = "Reload";
-            this.Reload.Size = new System.Drawing.Size(29, 24);
-            this.Reload.Text = "toolStripButton1";
-            this.Reload.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // Table
             // 
