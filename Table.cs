@@ -17,9 +17,6 @@ namespace MDI_Oleg
 
             this.Connection = Connection;
             this.table = table;
-            load();
-            hide();
-
         }
 
         private void hide()
@@ -197,6 +194,19 @@ namespace MDI_Oleg
         private void Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Table_Load(object sender, EventArgs e)
+        {
+            load();
+            hide();
+            var w = dataGridView1.Columns.GetColumnsWidth(DataGridViewElementStates.Visible) + 88;
+            this.MinimumSize = new System.Drawing.Size(w, 100);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            load();
         }
     }
 }

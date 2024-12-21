@@ -30,15 +30,15 @@
         {
             this.NameLabel = new System.Windows.Forms.Label();
             this.Name_ = new System.Windows.Forms.TextBox();
-            this.License = new System.Windows.Forms.TextBox();
             this.Birthday = new System.Windows.Forms.DateTimePicker();
-            this.Phone = new System.Windows.Forms.TextBox();
             this.LicenseLabel = new System.Windows.Forms.Label();
             this.BirthdayLabel = new System.Windows.Forms.Label();
             this.PhoneLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Cancel = new System.Windows.Forms.Button();
             this.Confirm = new System.Windows.Forms.Button();
+            this.Phone = new System.Windows.Forms.MaskedTextBox();
+            this.License = new System.Windows.Forms.MaskedTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,34 +55,18 @@
             // Name_
             // 
             this.Name_.Location = new System.Drawing.Point(153, 4);
-            this.Name_.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name_.Margin = new System.Windows.Forms.Padding(4);
             this.Name_.Name = "Name_";
             this.Name_.Size = new System.Drawing.Size(265, 22);
             this.Name_.TabIndex = 1;
             // 
-            // License
-            // 
-            this.License.Location = new System.Drawing.Point(153, 57);
-            this.License.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.License.Name = "License";
-            this.License.Size = new System.Drawing.Size(265, 22);
-            this.License.TabIndex = 2;
-            // 
             // Birthday
             // 
             this.Birthday.Location = new System.Drawing.Point(153, 110);
-            this.Birthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Birthday.Margin = new System.Windows.Forms.Padding(4);
             this.Birthday.Name = "Birthday";
             this.Birthday.Size = new System.Drawing.Size(265, 22);
             this.Birthday.TabIndex = 3;
-            // 
-            // Phone
-            // 
-            this.Phone.Location = new System.Drawing.Point(153, 163);
-            this.Phone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(265, 22);
-            this.Phone.TabIndex = 4;
             // 
             // LicenseLabel
             // 
@@ -122,10 +106,10 @@
             this.tableLayoutPanel1.Controls.Add(this.NameLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.PhoneLabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.Name_, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Phone, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.BirthdayLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.Birthday, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.LicenseLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.Phone, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.License, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(39, 36);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(27, 25, 27, 25);
@@ -142,7 +126,7 @@
             // Cancel
             // 
             this.Cancel.Location = new System.Drawing.Point(279, 251);
-            this.Cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(100, 28);
             this.Cancel.TabIndex = 8;
@@ -153,13 +137,29 @@
             // Confirm
             // 
             this.Confirm.Location = new System.Drawing.Point(387, 251);
-            this.Confirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Confirm.Margin = new System.Windows.Forms.Padding(4);
             this.Confirm.Name = "Confirm";
             this.Confirm.Size = new System.Drawing.Size(100, 28);
             this.Confirm.TabIndex = 9;
             this.Confirm.Text = "Сохранить";
             this.Confirm.UseVisualStyleBackColor = true;
             this.Confirm.Click += new System.EventHandler(this.Confirm_Click);
+            // 
+            // Phone
+            // 
+            this.Phone.Location = new System.Drawing.Point(152, 162);
+            this.Phone.Mask = "+7 000 000-00-00";
+            this.Phone.Name = "Phone";
+            this.Phone.Size = new System.Drawing.Size(266, 22);
+            this.Phone.TabIndex = 8;
+            // 
+            // License
+            // 
+            this.License.Location = new System.Drawing.Point(152, 56);
+            this.License.Mask = "00 00 000000";
+            this.License.Name = "License";
+            this.License.Size = new System.Drawing.Size(266, 22);
+            this.License.TabIndex = 9;
             // 
             // EditClient
             // 
@@ -171,7 +171,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.Cancel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditClient";
             this.Text = "EditClient";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -184,14 +184,14 @@
 
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.TextBox Name_;
-        private System.Windows.Forms.TextBox License;
         private System.Windows.Forms.DateTimePicker Birthday;
-        private System.Windows.Forms.TextBox Phone;
         private System.Windows.Forms.Label LicenseLabel;
         private System.Windows.Forms.Label BirthdayLabel;
         private System.Windows.Forms.Label PhoneLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.Button Confirm;
+        private System.Windows.Forms.MaskedTextBox Phone;
+        private System.Windows.Forms.MaskedTextBox License;
     }
 }

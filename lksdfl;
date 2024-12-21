@@ -1,0 +1,15 @@
+SELECT 
+    cl."ID" as Client_ID,
+    cl."Name" as Клиент,
+    c."ID" as Car_ID,
+    c."Model" as Модель,
+    c."Color" as Цвет,
+    r."ID",
+    r."Start" as Начало,
+    r."End" as Конец,
+    r."Price" as Цена
+FROM "Rent" r
+JOIN "Car" c
+    ON r."Car" = c."ID" 
+JOIN "Client" cl
+    ON r."Client" = cl."ID" 

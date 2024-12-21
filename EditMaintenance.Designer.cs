@@ -61,7 +61,7 @@
             this.tableLayoutPanel1.Controls.Add(this.End, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.Price, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 16);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -125,9 +125,10 @@
             // Car
             // 
             this.Car.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Car.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Car.FormattingEnabled = true;
             this.Car.Location = new System.Drawing.Point(93, 4);
-            this.Car.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Car.Margin = new System.Windows.Forms.Padding(4);
             this.Car.Name = "Car";
             this.Car.Size = new System.Drawing.Size(227, 24);
             this.Car.TabIndex = 5;
@@ -135,9 +136,10 @@
             // Service
             // 
             this.Service.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Service.FormattingEnabled = true;
             this.Service.Location = new System.Drawing.Point(93, 56);
-            this.Service.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Service.Margin = new System.Windows.Forms.Padding(4);
             this.Service.Name = "Service";
             this.Service.Size = new System.Drawing.Size(227, 24);
             this.Service.TabIndex = 6;
@@ -145,7 +147,7 @@
             // Start
             // 
             this.Start.Location = new System.Drawing.Point(93, 108);
-            this.Start.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Start.Margin = new System.Windows.Forms.Padding(4);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(225, 22);
             this.Start.TabIndex = 7;
@@ -153,7 +155,7 @@
             // End
             // 
             this.End.Location = new System.Drawing.Point(93, 160);
-            this.End.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.End.Margin = new System.Windows.Forms.Padding(4);
             this.End.Name = "End";
             this.End.Size = new System.Drawing.Size(225, 22);
             this.End.TabIndex = 8;
@@ -162,7 +164,7 @@
             // 
             this.Price.DecimalPlaces = 2;
             this.Price.Location = new System.Drawing.Point(93, 212);
-            this.Price.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Price.Margin = new System.Windows.Forms.Padding(4);
             this.Price.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -175,7 +177,7 @@
             // Confirm
             // 
             this.Confirm.Location = new System.Drawing.Point(236, 288);
-            this.Confirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Confirm.Margin = new System.Windows.Forms.Padding(4);
             this.Confirm.Name = "Confirm";
             this.Confirm.Size = new System.Drawing.Size(100, 28);
             this.Confirm.TabIndex = 1;
@@ -186,7 +188,7 @@
             // Cancel
             // 
             this.Cancel.Location = new System.Drawing.Point(128, 288);
-            this.Cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(100, 28);
             this.Cancel.TabIndex = 2;
@@ -202,7 +204,7 @@
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditMaintenance";
             this.Text = "EditMaintenance";
             this.tableLayoutPanel1.ResumeLayout(false);

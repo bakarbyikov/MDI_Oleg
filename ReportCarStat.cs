@@ -53,6 +53,7 @@ namespace MDI_Oleg
 
             var App = new Word.Application();
             var Document = App.Documents.Add();
+            Document.PageSetup.Orientation = Word.WdOrientation.wdOrientLandscape;
             var Range = Document.Range();
             var Sheet = Document.Tables.Add(
                 Range, Table.Rows.Count + 1, Table.Columns.Count + 1);

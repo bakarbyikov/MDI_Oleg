@@ -35,6 +35,7 @@
             this.Delete = new System.Windows.Forms.ToolStripButton();
             this.Exit = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Reload = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,8 @@
             this.Create,
             this.Edit,
             this.Delete,
-            this.Exit});
+            this.Exit,
+            this.Reload});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(568, 27);
@@ -69,7 +71,7 @@
             this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
             this.Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Edit.Name = "Edit";
-            this.Edit.Size = new System.Drawing.Size(29, 28);
+            this.Edit.Size = new System.Drawing.Size(29, 24);
             this.Edit.Text = "Редактирование данных";
             this.Edit.Click += new System.EventHandler(this.Edit_Click);
             // 
@@ -79,7 +81,7 @@
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
             this.Delete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(29, 28);
+            this.Delete.Size = new System.Drawing.Size(29, 24);
             this.Delete.Text = "Удаление данных";
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
@@ -89,7 +91,7 @@
             this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
             this.Exit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(29, 28);
+            this.Exit.Size = new System.Drawing.Size(29, 24);
             this.Exit.Text = "Выход";
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
@@ -108,6 +110,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(568, 206);
             this.dataGridView1.TabIndex = 1;
             // 
+            // Reload
+            // 
+            this.Reload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Reload.Image = ((System.Drawing.Image)(resources.GetObject("Reload.Image")));
+            this.Reload.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(29, 24);
+            this.Reload.Text = "toolStripButton1";
+            this.Reload.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // Table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -118,6 +130,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Table";
             this.Text = "Table";
+            this.Load += new System.EventHandler(this.Table_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -134,5 +147,6 @@
         private System.Windows.Forms.ToolStripButton Delete;
         private System.Windows.Forms.ToolStripButton Exit;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripButton Reload;
     }
 }
